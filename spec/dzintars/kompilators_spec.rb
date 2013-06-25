@@ -1,12 +1,12 @@
 # encoding: utf-8
 require "spec_helper"
 
-describe "Kompilators" do
-  let(:sākuma_kods) do
+aprakstīt "Kompilators" do
+  lai(:sākuma_kods) do
     "# encoding: utf-8\nrequire \"dzintars/core_ext\"\n"
   end
 
-  let(:kompilators) do
+  lai(:kompilators) do
     Dzintars::Kompilators.new
   end
 
@@ -14,7 +14,7 @@ describe "Kompilators" do
     kompilators.uz_ruby("").should == sākuma_kods + ""
   end
 
-  describe "skaitļi" do
+  aprakstīt "skaitļi" do
 
     tas "nokompilē veselu skaitli" do
       kompilators.uz_ruby("1").should == sākuma_kods + "1"
@@ -34,14 +34,14 @@ describe "Kompilators" do
 
   end
 
-  describe "atslēgvārdi" do
+  aprakstīt "atslēgvārdi" do
     tas "aizvieto ja / tad / citādi / beigas" do
       kompilators.uz_ruby("ja 1 tad\n2\ncitādi\n3\nbeigas").should ==
         sākuma_kods + "1 ? (2) : (3)"
     end
   end
 
-  describe "Kernel metodes" do
+  aprakstīt "Kernel metodes" do
     tas "izveido puts iesauku izdrukāt_virkni" do
       kompilators.uz_ruby("izdrukāt_virkni 'abc'").should ==
         sākuma_kods + "izdrukāt_virkni(\"abc\")"
