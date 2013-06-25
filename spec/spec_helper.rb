@@ -5,6 +5,32 @@
 # loaded once.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+module Matchers
+  class BeLike
+    def initialize(expected)
+      @expected = expected.gsub(/^\s+/, '').strip
+    end
+
+    def matches?(actual)
+      @actual = actual.gsub(/^\s+/, '').strip
+      @expected == @actual
+    end
+
+    def failure_message
+      "expected\n#{@actual}\nto be like\n#{@expected}"
+    end
+
+    def negative_failure_message
+      "expected\n#{@actual}\nto be unlike\n#{@expected}"
+    end
+  end
+
+  def be_like(expected)
+    BeLike.new(expected)
+  end
+end
+
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true
@@ -15,6 +41,8 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = 'random'
+
+  include Matchers
 end
 
 module RSpec::Core::DSL
@@ -28,6 +56,10 @@ end
 
 RSpec::Core::MemoizedHelpers::ClassMethods.module_eval do
   alias_method :lai, :let
+end
+
+RSpec::Core::MemoizedHelpers.module_eval do
+  alias_method :jābūt, :should
 end
 
 require "dzintars/kompilators"

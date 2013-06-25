@@ -48,19 +48,20 @@ module RubyParserStuff
     wordlist = [
       ["beigas",      [:kEND,      :kEND        ], :expr_end   ],
       ["citādi",     [:kELSE,     :kELSE       ], :expr_beg   ],
-      ["case",     [:kCASE,     :kCASE       ], :expr_beg   ],
-      ["ensure",   [:kENSURE,   :kENSURE     ], :expr_beg   ],
+      ["gadījumā",     [:kCASE,     :kCASE       ], :expr_beg   ],
+      ["nodrošināt",   [:kENSURE,   :kENSURE     ], :expr_beg   ],
       ["module",   [:kMODULE,   :kMODULE     ], :expr_beg   ],
-      ["elsif",    [:kELSIF,    :kELSIF      ], :expr_beg   ],
+      ["citādi_ja",    [:kELSIF,    :kELSIF      ], :expr_beg   ],
+      ["bet_ja",    [:kELSIF,    :kELSIF      ], :expr_beg   ],
       ["def",      [:kDEF,      :kDEF        ], :expr_fname ],
-      ["rescue",   [:kRESCUE,   :kRESCUE_MOD ], :expr_mid   ],
-      ["not",      [:kNOT,      :kNOT        ], :expr_beg   ],
+      ["glābt",   [:kRESCUE,   :kRESCUE_MOD ], :expr_mid   ],
+      ["nav",      [:kNOT,      :kNOT        ], :expr_beg   ],
       ["tad",     [:kTHEN,     :kTHEN       ], :expr_beg   ],
       ["yield",    [:kYIELD,    :kYIELD      ], :expr_arg   ],
       ["for",      [:kFOR,      :kFOR        ], :expr_beg   ],
       ["self",     [:kSELF,     :kSELF       ], :expr_end   ],
-      ["false",    [:kFALSE,    :kFALSE      ], :expr_end   ],
-      ["retry",    [:kRETRY,    :kRETRY      ], :expr_end   ],
+      ["aplams",    [:kFALSE,    :kFALSE      ], :expr_end   ],
+      ["mēģināt_vēlreiz",    [:kRETRY,    :kRETRY      ], :expr_end   ],
       ["return",   [:kRETURN,   :kRETURN     ], :expr_mid   ],
       ["patiess",     [:kTRUE,     :kTRUE       ], :expr_end   ],
       ["ja",       [:kIF,       :kIF_MOD     ], :expr_beg   ],
@@ -75,10 +76,10 @@ module RubyParserStuff
       ["unless",   [:kUNLESS,   :kUNLESS_MOD ], :expr_beg   ],
       ["or",       [:kOR,       :kOR         ], :expr_beg   ],
       ["next",     [:kNEXT,     :kNEXT       ], :expr_mid   ],
-      ["when",     [:kWHEN,     :kWHEN       ], :expr_beg   ],
+      ["kad",     [:kWHEN,     :kWHEN       ], :expr_beg   ],
       ["redo",     [:kREDO,     :kREDO       ], :expr_end   ],
       ["and",      [:kAND,      :kAND        ], :expr_beg   ],
-      ["begin",    [:kBEGIN,    :kBEGIN      ], :expr_beg   ],
+      ["sākt",    [:kBEGIN,    :kBEGIN      ], :expr_beg   ],
       ["__LINE__", [:k__LINE__, :k__LINE__   ], :expr_end   ],
       ["class",    [:kCLASS,    :kCLASS      ], :expr_class ],
       ["__FILE__", [:k__FILE__, :k__FILE__   ], :expr_end   ],
@@ -101,11 +102,11 @@ module RubyParserStuff
 
     WORDLIST18.delete "__ENCODING__"
 
-    %w[and case elsif for ja in module or unless until when while].each do |k|
+    %w[and gadījumā citādi_ja bet_ja for ja in module or unless until kad while].each do |k|
       WORDLIST19[k] = WORDLIST19[k].dup
       WORDLIST19[k].state = :expr_value
     end
-    %w[not].each do |k|
+    %w[nav].each do |k|
       WORDLIST19[k] = WORDLIST19[k].dup
       WORDLIST19[k].state = :expr_arg
     end

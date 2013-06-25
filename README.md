@@ -9,6 +9,11 @@ un pēc tam uzstādīt Dzintaru ar
 
     gem install dzintars
 
+## Kāpēc Dzintars?
+
+Programmēšanas valoda Dzintars ir [Ruby programmēšanas valoda](http://www.ruby-lang.org/) ar latvisku sintaksi.
+Tulkojot Ruby nosaukumu uz latviešu valodu sanāca Dzintars.
+
 ## Pirmā programma
 
 Izveidojiet datni sveika_pasaule.dz ar sekojošu saturu
@@ -22,6 +27,66 @@ Izveidojiet datni sveika_pasaule.dz ar sekojošu saturu
 un izpildiet ar
 
     dzintars sveika_pasaule.dz
+
+## Sintakse
+
+### Skaitļi
+
+Veseli skaitļi
+
+    123
+
+Daļskaitļi (kā decimāldaļu atdalītājs jāizmanto komats nevis svešzemju ieviestais punkts)
+
+    123,45
+
+### Burtu virknes
+
+    "Es esmu burtu virkne ar latviešu burtiem"
+    <<-BEIGAS
+    Burtu virkne, kas
+    sadalīta vairākās rindās
+    BEIGAS
+
+### Būla izteiksmes
+
+    patiess
+    aplams
+    nav patiess
+
+### Nosacījumi
+
+`tad` ir neobligāts atslēgvārds.
+
+    ja vērtība > 100 tad
+      "viss kārtībā"
+    bet_ja vērtība > 0 tad
+      "gandrīz kārtībā"
+    citādi
+      "nav labi"
+    beigas
+
+    gadījumā atzīme
+    kad 5 tad "teicami"
+    kad 4 tad "labi"
+    citādi "vidēji"
+    beigas
+
+### Kļūdu apstrāde
+
+    kļūdu_skaits = 0
+    sākt
+      # komentārs par slikto darbību
+      1 / 0
+    glābt => kļūda
+      kļūdu_skaits += 1
+      mēģināt_vēlreiz ja kļūdu_skaits < 3
+      celt "ļoti slikta kļūda"
+    nodrošināt
+      izdrukāt_virkni "Esam beiguši"
+    beigas
+
+Trupinājums sekos...
 
 ## Piedalīšanās Dzintara izstrādē
 
