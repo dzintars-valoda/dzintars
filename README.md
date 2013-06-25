@@ -1,29 +1,32 @@
 # Dzintars
 
-TODO: Write a gem description
+Dzintars ir pirmā latviešu programmēšanas valoda.
 
-## Installation
+## Uzstādīšana
 
-Add this line to your application's Gemfile:
+Nepieciešams vispirms uzstādīt Ruby programmēšanas valodu (versiju 1.9.3 vai vēlāku)
+un pēc tam uzstādīt Dzintaru ar
 
-    gem 'dzintars'
+    gem install dzintars
 
-And then execute:
+## Pirmā programma
 
-    $ bundle
+Izveidojiet datni sveika_pasaule.dz ar sekojošu saturu
 
-Or install it yourself as:
+    ja 1 > 0
+      izdrukāt_virkni "Sveika pasaule!"
+    citādi
+      izdrukāt_virkni "Kaut kas ir sabojājies"
+    beigas
 
-    $ gem install dzintars
+un izpildiet ar
 
-## Usage
+    dzintars sveika_pasaule.dz
 
-TODO: Write usage instructions here
+## Piedalīšanās Dzintara izstrādē
 
-## Contributing
+Sūtiet vilkšanas pieprasījumus.
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+## Licence
+
+Masačūsetsas Tehnoloģiskā Institūta licence (skat. LICENSE.txt datni).
