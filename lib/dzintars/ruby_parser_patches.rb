@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class RubyLexer
   ##
   #  Parse a number from the input stream.

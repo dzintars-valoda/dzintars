@@ -1,10 +1,11 @@
 #!/usr/bin/env ruby
+# encoding: utf-8
 
 require "dzintars/kompilators"
 
 if faila_nosaukums = ARGV[0]
   kompilators = Dzintars::Kompilators.new
-  dzintara_kods = File.read faila_nosaukums
+  dzintara_kods = File.read faila_nosaukums, encoding: 'utf-8'
   ruby_kods = kompilators.uz_ruby dzintara_kods
   eval ruby_kods
 
