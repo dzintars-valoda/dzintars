@@ -1,0 +1,5 @@
+ja 1 > 0
+  izdrukāt_virkni "Sveika pasaule!"
+citādi
+  izdrukāt_virkni "Kaut kas ir sabojājies"
+beigas

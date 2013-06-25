@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require "dzintars/kompilators"
+
+if faila_nosaukums = ARGV[0]
+  kompilators = Dzintars::Kompilators.new
+  dzintara_kods = File.read faila_nosaukums
+  ruby_kods = kompilators.uz_ruby dzintara_kods
+  eval ruby_kods
+
+else
+  puts <<-EOS
+Nav norādīts fails. Pareiza sintakse ir:
+
+dzintars fails.dz
+  EOS
+
+end
