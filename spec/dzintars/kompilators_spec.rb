@@ -108,12 +108,4 @@ aprakstīt "Kompilators" do
 
   end
 
-  aprakstīt "Kernel metodes" do
-    tas "izveido puts iesauku izdrukāt_virkni" do
-      kompilators.uz_ruby("izdrukāt_virkni 'abc'").should ==
-        sākuma_kods + "izdrukāt_virkni(\"abc\")"
-    end
-  end
-
-
 end
