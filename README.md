@@ -86,7 +86,7 @@ Daļskaitļi (kā decimāldaļu atdalītājs jāizmanto komats nevis svešzemju 
       izdrukāt_virkni "Esam beiguši"
     beigas
 
-Trupinājums sekos...
+Turpinājums sekos...
 
 ## Piedalīšanās Dzintara izstrādē
 
