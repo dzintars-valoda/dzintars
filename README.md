@@ -90,6 +90,10 @@ Daļskaitļi (kā decimāldaļu atdalītājs jāizmanto komats nevis svešzemju 
 
 Turpinājums sekos...
 
+### Virkne
+    'smuka meitene'.apgriezt         # => 'enetiem akums'
+    'Latvija'.garums                 # => 7
+
 ## Piedalīšanās Dzintara izstrādē
 
 Sūtiet vilkšanas pieprasījumus.
