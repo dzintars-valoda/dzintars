@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/dzintars-valoda/dzintars.png)](https://travis-ci.org/dzintars-valoda/dzintars)
-
 # Dzintars
+
+[![Build Status](https://travis-ci.org/dzintars-valoda/dzintars.png)](https://travis-ci.org/dzintars-valoda/dzintars)
 
 Dzintars ir pirmā latviešu programmēšanas valoda.
 
